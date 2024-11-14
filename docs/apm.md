@@ -42,3 +42,26 @@ Trong Elastic APM, Application Data Type là kiểu dữ liệu thu thập từ 
 
 ![apm_data_type](../images/apm_data_type.png)
 
+# Troubleshooting
+
+## What happens when APM Server or Elasticsearch is down?
+
+https://www.elastic.co/guide/en/observability/current/apm-server-es-down.html
+
+> Giải pháp, sử dụng redis hoặc kafka làm bộ đệm tạm thời, filter các message có contain "ERR", "CRITICAL" và push những message này tới redis hoặc kafka, sau đó dùng Logstash để đọc dữ liệu từ kafka/redis và đẩy về ElasticSearch (cần cài thêm kafka/redis và logstash)
+
+## APM Response code
+
+HTTP 503: Request timed out waiting to be processed
+
+https://www.elastic.co/guide/en/observability/current/apm-common-response-codes.html#apm-request-timed-out
+
+Điều này xảy ra khi APM server vượt quá lượng request tối đa mà nó có thể xử lý đồng thời. Đề giải quyết vấn đề này có thể thử `reduce the sample rate and/or reduce the collected stack trace information`
+
+https://www.elastic.co/guide/en/observability/current/apm-reduce-apm-storage.html
+
+> Cách giải quyết tốt nhất là tăng số lượng APM Server instances
+
+## Monitor APM server
+
+https://www.elastic.co/guide/en/observability/current/apm-monitoring.html
