@@ -64,4 +64,17 @@ https://www.elastic.co/guide/en/observability/current/apm-reduce-apm-storage.htm
 
 ## Monitor APM server
 
+- Internal collection
+
+- Metricbeat collection
+
+- Local collection
+
 https://www.elastic.co/guide/en/observability/current/apm-monitoring.html
+
+## Processing & Performance
+
+Hiệu suất của APM trên 1 số hardware cloud:
+
+https://www.elastic.co/guide/en/observability/current/apm-processing-and-performance.html
+
