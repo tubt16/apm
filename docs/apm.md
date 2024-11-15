@@ -62,19 +62,31 @@ https://www.elastic.co/guide/en/observability/current/apm-reduce-apm-storage.htm
 
 > Cách giải quyết tốt nhất là tăng số lượng APM Server instances
 
-## Monitor APM server
-
-- Internal collection
-
-- Metricbeat collection
-
-- Local collection
-
-https://www.elastic.co/guide/en/observability/current/apm-monitoring.html
-
 ## Processing & Performance
 
 Hiệu suất của APM trên 1 số hardware cloud:
 
 https://www.elastic.co/guide/en/observability/current/apm-processing-and-performance.html
+
+## Monitor APM server
+
+- Internal collection: Đẩy monitoring data qua Elasticsearch để monitor trực tiếp trong `Management` -> `Stack Monitoring`
+
+- Metricbeat collection: Dùng metricbeat để đẩy monitoring data qua Elasticsearch
+
+https://www.elastic.co/guide/en/observability/current/apm-monitoring.html
+
+## Monitor Service on APM
+
+Ngoài việc monitor APM server, sẽ cần monitor thêm về Latency và Transaction Error rate của từng service trên APM
+
+Có thể alert trên trực tiếp Kibana hoặc đẩy alert về Telegram Zabbix ...
+
+https://www.elastic.co/guide/en/observability/current/apm-alerts.html
+
+## Tunning APM
+
+Một số tham số có thể điều chỉnh trên APM để tăng performance APM Server -> ElasticSearch
+
+https://discuss.elastic.co/t/apm-server-tuning-for-heavy-workload/324455/3
 
